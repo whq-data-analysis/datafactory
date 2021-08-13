@@ -6,7 +6,10 @@
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
 			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=sql-whq-data-analysis.database.windows.net;initial catalog=WHQ-Data-Analysis;user id=whqadmin",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIldIUS1EQVRBRkFDVE9SWV8yMTdiMTZlNi1kODNkLTQ4ODctODQ1My0xMzJlYzUyOGNjYWIiDQp9"
+			"alwaysEncryptedSettings": {
+				"alwaysEncryptedAkvAuthType": "ManagedIdentity"
+			},
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIldIUS1EQVRBRkFDVE9SWV8zYjQ3NjMxMS00MzhjLTRhMWQtYTg4ZC1lZTgyNDEwZGQ0YmQiDQp9"
 		}
 	}
 }
