@@ -1,0 +1,9 @@
+{
+	"name": "WHQ-DataFactory",
+	"location": "southcentralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "013d8935-3609-4e2f-af80-e267230b8898",
+		"tenantId": "fbb69a62-3085-427a-ad88-65b9b44c8752"
+	}
+}
