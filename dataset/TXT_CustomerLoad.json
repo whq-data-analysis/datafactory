@@ -1,5 +1,5 @@
 {
-	"name": "GetCustomerLoad",
+	"name": "TXT_CustomerLoad",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureFileStorage1",
