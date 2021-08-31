@@ -1,0 +1,279 @@
+{
+	"name": "SQL_CustomerShippingData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CUSTOMER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ORDER_ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SHIP_DATE",
+				"type": "date"
+			},
+			{
+				"name": "SKU_PRDUCT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "QTY",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LENGTH_IN",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "WIDTH_IN",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "HEIGHT_IN",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "WGT_LBS",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "MODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ORIGIN_CITY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ORIGIN_ST_CD",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ORIGIN_ZIP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DEST_CITY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DEST_ST_CD",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DEST_ZIP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SHIP_L",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "SHIP_W",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "SHIP_H",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "PKG_VOL",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "CURR_DC",
+				"type": "varchar"
+			},
+			{
+				"name": "CURR_DC_ZIP3",
+				"type": "varchar"
+			},
+			{
+				"name": "CURR_DC_ZONE",
+				"type": "varchar"
+			},
+			{
+				"name": "DC1",
+				"type": "varchar"
+			},
+			{
+				"name": "DC1_ZIP3",
+				"type": "varchar"
+			},
+			{
+				"name": "DC1_ZONE",
+				"type": "varchar"
+			},
+			{
+				"name": "DC2",
+				"type": "varchar"
+			},
+			{
+				"name": "DC2_ZIP3",
+				"type": "varchar"
+			},
+			{
+				"name": "DC2_ZONE",
+				"type": "varchar"
+			},
+			{
+				"name": "DC3",
+				"type": "varchar"
+			},
+			{
+				"name": "DC3_ZIP3",
+				"type": "varchar"
+			},
+			{
+				"name": "DC3_ZONE",
+				"type": "varchar"
+			},
+			{
+				"name": "MIN_ZONE",
+				"type": "varchar"
+			},
+			{
+				"name": "MIN_DC",
+				"type": "varchar"
+			},
+			{
+				"name": "UPS_RATE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "USPS_RATE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "CURR_UPS_RATE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "CURR_USPS_RATE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "DEST_COUNTRY",
+				"type": "varchar"
+			},
+			{
+				"name": "WGT_OZ",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "USPS_FCS",
+				"type": "varchar"
+			},
+			{
+				"name": "USPS_FCS_RATE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "SHIP_WGT",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "CURR_USPS_FCS_RATE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "SHIP_WGT_OZ",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "MIN_RATE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "CURR_MIN_RATE",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "ORIGIN_ZIP3",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DEST_ZIP3",
+				"type": "nvarchar"
+			},
+			{
+				"name": "config_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CHANGED_DC",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ZONE_DIFF",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "USPS_DIFF",
+				"type": "decimal",
+				"precision": 19,
+				"scale": 2
+			},
+			{
+				"name": "UPS_DIFF",
+				"type": "decimal",
+				"precision": 19,
+				"scale": 2
+			},
+			{
+				"name": "USPS_FCS_DIFF",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "MIN_RATE_DIFF",
+				"type": "float",
+				"precision": 15
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "CustomerShippingData"
+		}
+	}
+}
