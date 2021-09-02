@@ -14,7 +14,7 @@
 			],
 			"sinks": [],
 			"transformations": [],
-			"script": "source(output(\n\t\tColumn_1 as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> DataFlowCustomerData"
+			"script": "source(output(\n\t\tColumn_1 as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false,\n\tlimit: 100,\n\tignoreNoFilesFound: false,\n\tmoveFiles: ['/CustomerData','Processed Files'],\n\tfileList: true) ~> DataFlowCustomerData"
 		}
 	}
 }

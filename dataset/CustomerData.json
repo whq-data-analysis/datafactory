@@ -1,5 +1,5 @@
 {
-	"name": "TXT_CustomerLoad",
+	"name": "CustomerData",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureFileStorage1",
@@ -10,15 +10,16 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureFileStorageLocation",
-				"fileName": "CustomerLoad"
+				"folderPath": "CustomerData"
 			},
-			"columnDelimiter": "\t",
+			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": [
 			{
+				"name": "CUSTOMER\tSHIP_DATE\tQTY\tORIGIN_CITY\tORIGIN_ST_CD\tORIGIN_ZIP\tDEST_CITY\tDEST_ST_CD\tDEST_ZIP\tLENGTH_IN\tWIDTH_IN\tHEIGHT_IN\tWGT_LBS",
 				"type": "String"
 			}
 		]
