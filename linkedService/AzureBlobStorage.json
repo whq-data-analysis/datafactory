@@ -4,8 +4,14 @@
 		"annotations": [],
 		"type": "AzureBlobStorage",
 		"typeProperties": {
-			"serviceEndpoint": "https://whqdatablob1.blob.core.windows.net",
-			"accountKind": "StorageV2"
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "ukIswuMyRege3ro907tAItfLz6CjFZ6lpjcladpvjgZWs3NNXTL2KvsOWcU0fDv49whVp6kp1kZgQMYYmo9rGA=="
+			}
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/linkedservices"
