@@ -3,11 +3,11 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_CustomerLoad",
-				"type": "Copy",
+				"name": "dataflow1",
+				"type": "ExecuteDataFlow",
 				"dependsOn": [],
 				"policy": {
-					"timeout": "7.00:00:00",
+					"timeout": "1.00:00:00",
 					"retry": 0,
 					"retryIntervalInSeconds": 30,
 					"secureOutput": false,
@@ -15,207 +15,23 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"source": {
-						"type": "DelimitedTextSource",
-						"storeSettings": {
-							"type": "AzureFileStorageReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
-						}
+					"dataflow": {
+						"referenceName": "dataflow1",
+						"type": "DataFlowReference"
 					},
-					"sink": {
-						"type": "AzureSqlSink"
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
 					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"name": "CUSTOMER",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "CUSTOMER",
-									"type": "String",
-									"physicalType": "nvarchar"
-								}
-							},
-							{
-								"source": {
-									"name": "SHIP_DATE",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "SHIP_DATE",
-									"type": "DateTime",
-									"physicalType": "date"
-								}
-							},
-							{
-								"source": {
-									"name": "QTY",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "QTY",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
-									"name": "LENGTH_IN",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "LENGTH_IN",
-									"type": "Double",
-									"physicalType": "float"
-								}
-							},
-							{
-								"source": {
-									"name": "WIDTH_IN",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "WIDTH_IN",
-									"type": "Double",
-									"physicalType": "float"
-								}
-							},
-							{
-								"source": {
-									"name": "HEIGHT_IN",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "HEIGHT_IN",
-									"type": "Double",
-									"physicalType": "float"
-								}
-							},
-							{
-								"source": {
-									"name": "WGT_LBS",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "WGT_LBS",
-									"type": "Double",
-									"physicalType": "float"
-								}
-							},
-							{
-								"source": {
-									"name": "ORIGIN_CITY",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ORIGIN_CITY",
-									"type": "String",
-									"physicalType": "nvarchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ORIGIN_ST_CD",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ORIGIN_ST_CD",
-									"type": "String",
-									"physicalType": "nvarchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ORIGIN_ZIP",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ORIGIN_ZIP",
-									"type": "String",
-									"physicalType": "nvarchar"
-								}
-							},
-							{
-								"source": {
-									"name": "DEST_CITY",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "DEST_CITY",
-									"type": "String",
-									"physicalType": "nvarchar"
-								}
-							},
-							{
-								"source": {
-									"name": "DEST_ST_CD",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "DEST_ST_CD",
-									"type": "String",
-									"physicalType": "nvarchar"
-								}
-							},
-							{
-								"source": {
-									"name": "DEST_ZIP",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "DEST_ZIP",
-									"type": "String",
-									"physicalType": "nvarchar"
-								}
-							}
-						],
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "TXT_CustomerLoad",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "SQL_CustomerShippingData",
-						"type": "DatasetReference"
-					}
-				]
+					"traceLevel": "Fine"
+				}
 			},
 			{
 				"name": "Stored procedure1",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
-						"activity": "Copy_CustomerLoad",
+						"activity": "dataflow1",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -230,7 +46,13 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[dbo].[ShippingDataCustomerInfoConfigID]"
+					"storedProcedureName": "[dbo].[Run_ParcelAnalysisJobsConfigID]",
+					"storedProcedureParameters": {
+						"Param_configid": {
+							"value": "",
+							"type": "Int32"
+						}
+					}
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureSqlDatabase1",
