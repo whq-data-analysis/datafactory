@@ -6,15 +6,23 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "TXT_CustomerLoad",
+						"referenceName": "CustomerData",
 						"type": "DatasetReference"
 					},
 					"name": "DataFlowCustomerData"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "SQL_CustomerShippingData",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
 			"transformations": [],
-			"script": "source(output(\n\t\tColumn_1 as string\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false,\n\tlimit: 100,\n\tignoreNoFilesFound: false,\n\tmoveFiles: ['/CustomerData','Processed Files'],\n\tfileList: true) ~> DataFlowCustomerData"
+			"script": "source(output(\n\t\tCUSTOMER as string,\n\t\tSHIP_DATE as date 'MM/dd/yyyy',\n\t\tQTY as string,\n\t\tORIGIN_CITY as string,\n\t\tORIGIN_ST_CD as string,\n\t\tORIGIN_ZIP as string,\n\t\tDEST_CITY as string,\n\t\tDEST_ST_CD as string,\n\t\tDEST_ZIP as string,\n\t\tLENGTH_IN as double '000,000,000.000',\n\t\tWIDTH_IN as double '000,000,000.000',\n\t\tHEIGHT_IN as double '000,000,000.000',\n\t\tWGT_LBS as double '000,000,000.000'\n\t),\n\tallowSchemaDrift: false,\n\tvalidateSchema: false,\n\tlimit: 100,\n\tignoreNoFilesFound: false,\n\tmoveFiles: ['/CustomerData','Processed Files'],\n\tfileList: true) ~> DataFlowCustomerData\nDataFlowCustomerData sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tinput(\n\t\tID as integer,\n\t\tCUSTOMER as string,\n\t\tORDER_ID as string,\n\t\tSHIP_DATE as date,\n\t\tSKU_PRDUCT as string,\n\t\tQTY as integer,\n\t\tLENGTH_IN as double,\n\t\tWIDTH_IN as double,\n\t\tHEIGHT_IN as double,\n\t\tWGT_LBS as double,\n\t\tMODE as string,\n\t\tORIGIN_CITY as string,\n\t\tORIGIN_ST_CD as string,\n\t\tORIGIN_ZIP as string,\n\t\tDEST_CITY as string,\n\t\tDEST_ST_CD as string,\n\t\tDEST_ZIP as string,\n\t\tSHIP_L as double,\n\t\tSHIP_W as double,\n\t\tSHIP_H as double,\n\t\tPKG_VOL as double,\n\t\tCURR_DC as string,\n\t\tCURR_DC_ZIP3 as string,\n\t\tCURR_DC_ZONE as string,\n\t\tDC1 as string,\n\t\tDC1_ZIP3 as string,\n\t\tDC1_ZONE as string,\n\t\tDC2 as string,\n\t\tDC2_ZIP3 as string,\n\t\tDC2_ZONE as string,\n\t\tDC3 as string,\n\t\tDC3_ZIP3 as string,\n\t\tDC3_ZONE as string,\n\t\tMIN_ZONE as string,\n\t\tMIN_DC as string,\n\t\tUPS_RATE as decimal(18,2),\n\t\tUSPS_RATE as decimal(18,2),\n\t\tCURR_UPS_RATE as decimal(18,2),\n\t\tCURR_USPS_RATE as decimal(18,2),\n\t\tDEST_COUNTRY as string,\n\t\tWGT_OZ as double,\n\t\tUSPS_FCS as string,\n\t\tUSPS_FCS_RATE as double,\n\t\tSHIP_WGT as double,\n\t\tCURR_USPS_FCS_RATE as double,\n\t\tSHIP_WGT_OZ as double,\n\t\tMIN_RATE as double,\n\t\tCURR_MIN_RATE as double,\n\t\tORIGIN_ZIP3 as string,\n\t\tDEST_ZIP3 as string,\n\t\tconfig_id as integer,\n\t\tCHANGED_DC as integer,\n\t\tZONE_DIFF as integer,\n\t\tUSPS_DIFF as decimal(19,2),\n\t\tUPS_DIFF as decimal(19,2),\n\t\tUSPS_FCS_DIFF as double,\n\t\tMIN_RATE_DIFF as double\n\t),\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\terrorHandlingOption: 'stopOnFirstError',\n\tmapColumn(\n\t\tCUSTOMER,\n\t\tSHIP_DATE,\n\t\tLENGTH_IN,\n\t\tWIDTH_IN,\n\t\tHEIGHT_IN,\n\t\tWGT_LBS,\n\t\tORIGIN_CITY,\n\t\tORIGIN_ST_CD,\n\t\tORIGIN_ZIP,\n\t\tDEST_CITY,\n\t\tDEST_ST_CD,\n\t\tDEST_ZIP\n\t)) ~> sink1"
 		}
 	}
 }
