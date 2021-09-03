@@ -4,8 +4,8 @@
 		"annotations": [],
 		"type": "AzureBlobStorage",
 		"typeProperties": {
-			"serviceEndpoint": "https://whqfilestorage.blob.core.windows.net",
-			"accountKind": "FileStorage"
+			"serviceEndpoint": "https://whqdatablob1.blob.core.windows.net",
+			"accountKind": "StorageV2"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/linkedservices"
