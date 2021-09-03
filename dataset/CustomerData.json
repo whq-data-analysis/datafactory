@@ -12,14 +12,62 @@
 				"type": "AzureFileStorageLocation",
 				"fileName": "CustomerLoad"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "\t",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": [
 			{
-				"name": "CUSTOMER\tSHIP_DATE\tQTY\tORIGIN_CITY\tORIGIN_ST_CD\tORIGIN_ZIP\tDEST_CITY\tDEST_ST_CD\tDEST_ZIP\tLENGTH_IN\tWIDTH_IN\tHEIGHT_IN\tWGT_LBS",
+				"name": "CUSTOMER",
+				"type": "String"
+			},
+			{
+				"name": "SHIP_DATE",
+				"type": "String"
+			},
+			{
+				"name": "QTY",
+				"type": "String"
+			},
+			{
+				"name": "ORIGIN_CITY",
+				"type": "String"
+			},
+			{
+				"name": "ORIGIN_ST_CD",
+				"type": "String"
+			},
+			{
+				"name": "ORIGIN_ZIP",
+				"type": "String"
+			},
+			{
+				"name": "DEST_CITY",
+				"type": "String"
+			},
+			{
+				"name": "DEST_ST_CD",
+				"type": "String"
+			},
+			{
+				"name": "DEST_ZIP",
+				"type": "String"
+			},
+			{
+				"name": "LENGTH_IN",
+				"type": "String"
+			},
+			{
+				"name": "WIDTH_IN",
+				"type": "String"
+			},
+			{
+				"name": "HEIGHT_IN",
+				"type": "String"
+			},
+			{
+				"name": "WGT_LBS",
 				"type": "String"
 			}
 		]
