@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureFileStorageLocation",
-				"folderPath": "CustomerData"
+				"fileName": "CustomerLoad"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
