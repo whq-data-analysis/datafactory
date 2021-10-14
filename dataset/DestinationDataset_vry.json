@@ -1,0 +1,371 @@
+{
+	"name": "DestinationDataset_vry",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ID",
+				"type": "int",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "CUSTOMER",
+				"type": "nvarchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "ORDER_ID",
+				"type": "nvarchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "SHIP_DATE",
+				"type": "date",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "SKU_PRDUCT",
+				"type": "nvarchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "QTY",
+				"type": "int",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "LENGTH_IN",
+				"type": "float",
+				"precision": 53,
+				"scale": 0
+			},
+			{
+				"name": "WIDTH_IN",
+				"type": "float",
+				"precision": 53,
+				"scale": 0
+			},
+			{
+				"name": "HEIGHT_IN",
+				"type": "float",
+				"precision": 53,
+				"scale": 0
+			},
+			{
+				"name": "WGT_LBS",
+				"type": "float",
+				"precision": 53,
+				"scale": 0
+			},
+			{
+				"name": "MODE",
+				"type": "nvarchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "ORIGIN_CITY",
+				"type": "nvarchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "ORIGIN_ST_CD",
+				"type": "nvarchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "ORIGIN_ZIP",
+				"type": "nvarchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "DEST_CITY",
+				"type": "nvarchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "DEST_ST_CD",
+				"type": "nvarchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "DEST_ZIP",
+				"type": "nvarchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "SHIP_L",
+				"type": "float",
+				"precision": 53,
+				"scale": 0
+			},
+			{
+				"name": "SHIP_W",
+				"type": "float",
+				"precision": 53,
+				"scale": 0
+			},
+			{
+				"name": "SHIP_H",
+				"type": "float",
+				"precision": 53,
+				"scale": 0
+			},
+			{
+				"name": "PKG_VOL",
+				"type": "float",
+				"precision": 53,
+				"scale": 0
+			},
+			{
+				"name": "CURR_DC",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "CURR_DC_ZIP3",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "CURR_DC_ZONE",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "DC1",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "DC1_ZIP3",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "DC1_ZONE",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "DC2",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "DC2_ZIP3",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "DC2_ZONE",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "DC3",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "DC3_ZIP3",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "DC3_ZONE",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "MIN_ZONE",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "MIN_DC",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "UPS_RATE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "USPS_RATE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "CURR_UPS_RATE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "CURR_USPS_RATE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "DEST_COUNTRY",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "WGT_OZ",
+				"type": "float",
+				"precision": 53,
+				"scale": 0
+			},
+			{
+				"name": "USPS_FCS",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "USPS_FCS_RATE",
+				"type": "float",
+				"precision": 53,
+				"scale": 0
+			},
+			{
+				"name": "SHIP_WGT",
+				"type": "float",
+				"precision": 53,
+				"scale": 0
+			},
+			{
+				"name": "CURR_USPS_FCS_RATE",
+				"type": "float",
+				"precision": 53,
+				"scale": 0
+			},
+			{
+				"name": "SHIP_WGT_OZ",
+				"type": "float",
+				"precision": 53,
+				"scale": 0
+			},
+			{
+				"name": "MIN_RATE",
+				"type": "float",
+				"precision": 53,
+				"scale": 0
+			},
+			{
+				"name": "CURR_MIN_RATE",
+				"type": "float",
+				"precision": 53,
+				"scale": 0
+			},
+			{
+				"name": "ORIGIN_ZIP3",
+				"type": "nvarchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "DEST_ZIP3",
+				"type": "nvarchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "config_id",
+				"type": "int",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "CHANGED_DC",
+				"type": "int",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "ZONE_DIFF",
+				"type": "int",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "USPS_DIFF",
+				"type": "decimal",
+				"precision": 19,
+				"scale": 2
+			},
+			{
+				"name": "UPS_DIFF",
+				"type": "decimal",
+				"precision": 19,
+				"scale": 2
+			},
+			{
+				"name": "USPS_FCS_DIFF",
+				"type": "float",
+				"precision": 53,
+				"scale": 0
+			},
+			{
+				"name": "MIN_RATE_DIFF",
+				"type": "float",
+				"precision": 53,
+				"scale": 0
+			},
+			{
+				"name": "MIN_RATE_MARGIN",
+				"type": "float",
+				"precision": 53,
+				"scale": 0
+			},
+			{
+				"name": "CURR_RATE_MARGIN",
+				"type": "float",
+				"precision": 53,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "CustomerShippingData"
+		}
+	}
+}
