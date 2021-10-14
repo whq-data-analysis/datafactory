@@ -1,0 +1,66 @@
+{
+	"name": "CustomerDC",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"CustomerName": {
+				"type": "string"
+			},
+			"DC1": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "config_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CUSTOMER",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CURR_DC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CURR_DC_ZIP3",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DC1",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DC1_ZIP3",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DC2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DC2_ZIP3",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DC3",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DC3_ZIP3",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "CustomerDC"
+		}
+	}
+}
